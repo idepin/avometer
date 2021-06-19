@@ -10,6 +10,10 @@ public class UIController : MonoBehaviour
     public void Show()
     {
         ui[index].GetComponent<UIAnimatorController>().Show();
+        if(index != 0)
+        {
+            ui[index - 1].GetComponent<UIAnimatorController>().Hide();
+        }
     }
 
     public void Next()
