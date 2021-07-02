@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIAnimatorController : MonoBehaviour
 {
     Animator anim;
+    public UnityEvent onShow, onHide;
 
     private void Start()
     {
@@ -14,10 +16,12 @@ public class UIAnimatorController : MonoBehaviour
     public void Show()
     {
         anim.SetBool("Show", true);
+        onShow.Invoke();
     }
 
     public void Hide()
     {
         anim.SetBool("Show", false);
+        onHide.Invoke();
     }
 }
