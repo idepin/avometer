@@ -39,6 +39,7 @@ public class DrawLine : MonoBehaviour
 
     private void Update()
     {
+        if (!initialized) return;
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, target.position);
     }

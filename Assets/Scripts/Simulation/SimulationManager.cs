@@ -19,8 +19,15 @@ public class SimulationManager : MonoBehaviour
     }
     public void Next()
     {
-        simulationItems[tutorialIndex].onEnd.Invoke();
-        tutorialIndex++;
-        simulationItems[tutorialIndex].onStart.Invoke();
+
+        if(tutorialIndex < simulationItems.Length)
+        {
+            if(tutorialIndex != 0)
+            {
+                simulationItems[tutorialIndex-1].onEnd.Invoke();
+            }
+            simulationItems[tutorialIndex].onStart.Invoke();
+            tutorialIndex++;
+        }
     }
 }

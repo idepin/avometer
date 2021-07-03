@@ -5,23 +5,27 @@ using UnityEngine.Events;
 
 public class UIAnimatorController : MonoBehaviour
 {
-    Animator anim;
     public UnityEvent onShow, onHide;
+
+    [SerializeField]
+    float animDuration = 0.4f;
+
+    CanvasGroup cg;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        cg = GetComponent<CanvasGroup>();
     }
 
     public void Show()
     {
-        anim.SetBool("Show", true);
+        LeanTween.alphaCanvas(cg, 1f, animDuration);
         onShow.Invoke();
     }
 
     public void Hide()
     {
-        anim.SetBool("Show", false);
+        LeanTween.alphaCanvas(cg, 0f, animDuration);
         onHide.Invoke();
     }
 }
