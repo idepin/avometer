@@ -33,7 +33,8 @@ public class DrawLine : MonoBehaviour
 
     void Hide()
     {
-        lineRenderer.enabled = false;
+        lineRenderer.startWidth = 0f;
+        lineRenderer.endWidth = 0f;
     }
 
     private void Update()
