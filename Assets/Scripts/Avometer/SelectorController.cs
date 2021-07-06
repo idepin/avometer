@@ -34,7 +34,7 @@ public class SelectorController : MonoBehaviour
 
     public void Rotate(float target)
     {
-        LeanTween.rotateAround(gameObject, Vector3.forward, target, 0.4f);
+        LeanTween.rotateAroundLocal(gameObject, Vector3.forward, target, 0.4f);
         audioSource.PlayOneShot(soundFx);
     }
 }
