@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class NeedleController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Rotate(float add)
     {
-        
+        LeanTween.rotate(gameObject, new Vector3(0, add, 0), 1f).setEasePunch();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
